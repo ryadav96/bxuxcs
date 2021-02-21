@@ -3862,7 +3862,7 @@ const dt = [
 ]
 
 const home = () => {
-    return (<div className="mx-2 my-0">
+    return (<div className="mx-5 my-0">
         <h1>On going IPO</h1>
         <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
             <Card item={dt[0]} />
