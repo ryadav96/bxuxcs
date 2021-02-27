@@ -3881,7 +3881,6 @@ const upcommingIPO = [
   }
 ]
 const home = ({ ipoData }) => {
-  console.log(ipoData);
   return (<div className="mx-5 my-0">
     <h1>On going IPO</h1>
     <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
@@ -3907,7 +3906,6 @@ export default home;
 export async function getStaticProps(context) {
   const res = await fetch("https://gist.githubusercontent.com/ryadav96/852237286331933c700b99e0ecdce0f0/raw/2e1f06e0ca1d36855872be3748e2ef762fa9cc45/cvbcvb.json");
   const ipoData = await res.json();
-  console.log("ipoData", ipoData);
   return {
     props: {
       ipoData
