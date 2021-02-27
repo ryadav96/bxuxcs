@@ -3860,19 +3860,57 @@ const dt = [
     "Current Gains (%)": 187.12
   }
 ]
-
-const home = () => {
-    return (<div className="mx-5 my-0">
-        <h1>On going IPO</h1>
-        <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card item={dt[0]} />
-            <Card item={dt[1]} />
-            <Card item={dt[2]} />
-            <Card item={dt[3]} />
-        </div>
-        <h2>Recent IPO</h2>
-        <Table tableData={dt}/>
-    </div>);
+const upcommingIPO = [
+  {
+    "openDate": "03-03-21",
+    "closeDate": "",
+    "IPO Name": "MTAR",
+    "Profile": "https://www.moneycontrol.com/ipo/stove-kraft_SK02.html",
+    "issueSize": "595.38 - 596.41 Cr.",
+    "priceRange": "574.00-575.00",
+    "QIB": 8.02,
+    "HNI": 32.72,
+    "RII": 26.04,
+    "Total": 18.03,
+    "Issue": 385,
+    "Listing Open": 498,
+    "Listing Close": 445.95,
+    "Listing  Gains(%)": 15.83,
+    "CMP": 484.3,
+    "Current Gains (%)": 25.79
+  }
+]
+const home = ({ ipoData }) => {
+  console.log(ipoData);
+  return (<div className="mx-5 my-0">
+    <h1>On going IPO</h1>
+    <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
+      <Card item={ipoData[0]} />
+      <Card item={ipoData[1]} />
+      <Card item={ipoData[2]} />
+      <Card item={ipoData[3]} />
+    </div>
+    <h1>Open Close Date confirmed IPO</h1>
+    <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
+      <Card item={upcommingIPO[0]} />
+      <Card item={ipoData[1]} />
+      <Card item={ipoData[2]} />
+      <Card item={ipoData[3]} />
+    </div>
+    <h2>Recent IPO</h2>
+    <Table tableData={ipoData} />
+  </div>);
 }
 
 export default home;
+
+export async function getStaticProps(context) {
+  const res = await fetch("https://gist.githubusercontent.com/ryadav96/852237286331933c700b99e0ecdce0f0/raw/2e1f06e0ca1d36855872be3748e2ef762fa9cc45/cvbcvb.json");
+  const ipoData = await res.json();
+  console.log("ipoData", ipoData);
+  return {
+    props: {
+      ipoData
+    }
+  }
+}

@@ -1,10 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useCurrentUser } from '@/hooks/index';
 
 export default function Layout({ children }) {
-  const [user, { mutate }] = useCurrentUser();
   const handleLogout = async () => {
     await fetch('/api/auth', {
       method: 'DELETE',
@@ -84,7 +82,7 @@ export default function Layout({ children }) {
             border-bottom: 1px solid #d8d8d8;
           }
           nav {
-            max-width: 1040px;
+            max-width: 1024px;
             margin: auto;
             padding: 1rem 2rem;
           }
@@ -109,7 +107,7 @@ export default function Layout({ children }) {
           }
           main {
             padding: 1rem;
-            max-width: 1040px;
+            max-width: 90%;
             margin: 0 auto;
           }
           footer {
@@ -150,26 +148,26 @@ export default function Layout({ children }) {
             </a>
           </Link>
           <div>
-            {!user ? (
+            {"!user" ? (
               <>
-                <Link href="/login">
-                  <a>Sign in</a>
+                <Link href="/home">
+                  <a>All IPOs</a>
                 </Link>
-                <Link href="/signup">
-                  <a>Sign up</a>
+                <Link href="/blogs">
+                  <a>Blogs</a>
                 </Link>
               </>
             ) : (
-              <>
-                <Link href={`/user/${user._id}`}>
-                  <a>Profile</a>
-                </Link>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a tabIndex={0} role="button" onClick={handleLogout}>
-                  Logout
+                <>
+                  <Link href={`/user/${user._id}`}>
+                    <a>Profile</a>
+                  </Link>
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <a tabIndex={0} role="button" onClick={handleLogout}>
+                    Logout
                 </a>
-              </>
-            )}
+                </>
+              )}
           </div>
         </nav>
       </header>
@@ -182,14 +180,10 @@ export default function Layout({ children }) {
           <span role="img" aria-label="Love">
             ❤️
           </span>
-          ,
           {' '}
-          <span role="img" aria-label="Fire">
-            🔥
-          </span>
-          , and a keyboard by
+          in
           {' '}
-          <a href="">Rakesh Yadav</a>
+          <a href="">India</a>
           .
         </p>
       </footer>

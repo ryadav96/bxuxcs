@@ -4,7 +4,7 @@ import Mainpage from "./home"
 export default function Home() {
   return (
     <div>
-    <Mainpage/>
+      <Mainpage />
     </div>
   )
 }
