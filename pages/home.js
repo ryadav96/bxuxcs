@@ -3883,14 +3883,14 @@ const upcommingIPO = [
 const home = ({ ipoData }) => {
   return (<div className="mx-5 my-0">
     <h1>On going IPO</h1>
-    <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-6 mt-1 mb-4 md:grid-cols-2 lg:grid-cols-4">
       <Card item={dt[0]} />
       <Card item={dt[1]} />
       <Card item={dt[2]} />
       <Card item={dt[3]} />
     </div>
     <h1>Open Close Date confirmed IPO</h1>
-    <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-6 mt-1 mb-4 md:grid-cols-2 lg:grid-cols-4">
       <Card item={upcommingIPO[0]} />
       <Card item={dt[1]} />
       <Card item={dt[2]} />

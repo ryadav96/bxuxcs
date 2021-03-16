@@ -61,23 +61,6 @@ export default function Layout({ children }) {
             outline: 0px;
             padding: 10px 25px;
           }
-          button {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #fff;
-            border-radius: 5px;
-            border: none;
-            background-color: #000;
-            cursor: pointer;
-            transition: all 0.2s ease 0s;
-            padding: 10px 25px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          }
-          button:hover,
-          button:active {
-            transform: translate3d(0px, -1px, 0px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-          }
           header {
             border-bottom: 1px solid #d8d8d8;
           }
@@ -107,7 +90,6 @@ export default function Layout({ children }) {
           }
           main {
             padding: 1rem;
-            max-width: 90%;
             margin: 0 auto;
           }
           footer {
@@ -130,7 +112,7 @@ export default function Layout({ children }) {
           name="description"
           content="Test"
         />
-        <meta property="og:title" content="Next.js + MongoDB App" />
+        <meta property="og:title" content="Indian Stock Market IPO Dashboard IPO Tracking" />
         <meta
           property="og:description"
           content="test"
@@ -171,21 +153,9 @@ export default function Layout({ children }) {
           </div>
         </nav>
       </header>
-
-      <main>{children}</main>
+      <main className="px-5">{children}</main>
       <footer>
-        <p>
-          Made with
-          {' '}
-          <span role="img" aria-label="Love">
-            ❤️
-          </span>
-          {' '}
-          in
-          {' '}
-          <a href="">India</a>
-          .
-        </p>
+        Footer DEV in progress
       </footer>
     </>
   );
