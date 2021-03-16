@@ -65,7 +65,7 @@ export default function Layout({ children }) {
             border-bottom: 1px solid #d8d8d8;
           }
           nav {
-            max-width: 1024px;
+            max-width: 98%;
             margin: auto;
             padding: 1rem 2rem;
           }
